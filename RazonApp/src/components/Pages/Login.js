@@ -4,6 +4,7 @@ import {
   TextInput,
   TouchableOpacity,
   StyleSheet,
+  Image,
 } from "react-native";
 import React, { useState } from "react";
 import AntDesign from "@expo/vector-icons/AntDesign"; // Import AntDesign for eye icon
@@ -41,6 +42,13 @@ const Login = () => {
       colors={["#D5006D", "#2196F3"]} // Dark pink to blue gradient
       style={styles.container}
     >
+      <View style={styles.logoContainer}>
+        <Image
+          source={require("../../assets/logotry.png")}
+          style={styles.logo}
+          resizeMode="cover"
+        />
+      </View>
       <Text style={styles.title}>Login</Text>
 
       <TextInput
@@ -114,6 +122,19 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     textAlign: "center",
     color: "#fff", // Change title color to white for better visibility on gradient
+  },
+  logoContainer: {
+    alignItems: "center", // Center logo within its container
+    marginBottom: 20, // Space between logo and other elements
+  },
+  logo: {
+    top: -100,
+    width: 350,
+    height: 100,
+    borderRadius: 20, // Makes the image circular
+    bottom: -50, // Adjust this to fit nicely within the banner
+    borderWidth: 3,
+    borderColor: "#fff",
   },
   input: {
     height: 40,
