@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   StyleSheet,
   Alert,
+  Image,
 } from "react-native";
 import React, { useState } from "react";
 import AntDesign from "@expo/vector-icons/AntDesign"; // Import AntDesign for eye icon
@@ -65,6 +66,13 @@ const Register = () => {
       colors={["#D5006D", "#2196F3"]} // Dark pink to blue gradient
       style={styles.container}
     >
+      <View style={styles.logoContainer}>
+        <Image
+          source={require("../../assets/logotry.png")}
+          style={styles.logo}
+          resizeMode="cover"
+        />
+      </View>
       <Text style={styles.title}>Register</Text>
 
       <TextInput
@@ -216,6 +224,19 @@ const styles = StyleSheet.create({
     color: "red", // Color for error message
     marginBottom: 5,
     fontSize: 14,
+  },
+  logoContainer: {
+    alignItems: "center", // Center logo within its container
+    marginBottom: 20, // Space between logo and other elements
+  },
+  logo: {
+    top: -100,
+    width: 350,
+    height: 100,
+    borderRadius: 20, // Makes the image circular
+    bottom: -50, // Adjust this to fit nicely within the banner
+    borderWidth: 3,
+    borderColor: "#fff",
   },
 });
 
